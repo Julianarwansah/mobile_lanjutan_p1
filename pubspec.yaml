@@ -30,9 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    assets:
-      - assets/audio/music/
-      - assets/audio/sfx/
   flame: ^1.16.0
   flame_audio: ^2.1.6
 
@@ -61,6 +58,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/audio/music/
+    - assets/audio/sfx/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
