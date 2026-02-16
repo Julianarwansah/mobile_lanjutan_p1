@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flame/game.dart';
+import 'game/fruit_catcher_game.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +28,8 @@ class GameScreen extends StatefulWidget {
 }
 
 class _GameScreenState extends State<GameScreen> {
+  late FruitCatcherGame game;
+
   @override
   void initState() {
     super.initState();
