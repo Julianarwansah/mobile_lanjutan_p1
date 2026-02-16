@@ -8,7 +8,7 @@ import 'basket.dart';
 enum FruitType { apple, banana, orange, strawberry }
 
 class Fruit extends PositionComponent
-    with HasGameRef<FruitCatcherGame>, CollisionCallbacks {
+    with HasGameReference<FruitCatcherGame>, CollisionCallbacks {
   final FruitType type;
   final double fallSpeed = 200;
   final Random random = Random();
@@ -31,7 +31,7 @@ class Fruit extends PositionComponent
     position.y += fallSpeed * dt;
 
     // Remove if off screen
-    if (position.y > gameRef.size.y + 50) {
+    if (position.y > game.size.y + 50) {
       removeFromParent();
     }
   }
@@ -40,7 +40,7 @@ class Fruit extends PositionComponent
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
     if (other is Basket) {
-      gameRef.incrementScore();
+      game.incrementScore();
       removeFromParent();
     }
   }
@@ -69,7 +69,7 @@ class Fruit extends PositionComponent
 
     // Add shine effect
     final shinePaint = Paint()
-      ..color = Colors.white.withOpacity(0.3)
+      ..color = Colors.white.withValues(alpha: 0.3)
       ..style = PaintingStyle.fill;
     canvas.drawCircle(
       Offset(size.x / 2 - 5, size.y / 2 - 5),
