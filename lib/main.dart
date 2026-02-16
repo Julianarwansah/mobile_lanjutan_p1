@@ -43,6 +43,7 @@ class _GameScreenState extends State<GameScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          GameWidget(game: game),
           Positioned(
             top: 50,
             left: 20,
