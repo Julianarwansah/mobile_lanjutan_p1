@@ -33,6 +33,7 @@ class _GameScreenState extends State<GameScreen> {
   @override
   void initState() {
     super.initState();
+    game = FruitCatcherGame();
   }
 
   final ValueNotifier<int> counter = ValueNotifier(0);
